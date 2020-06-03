@@ -98,7 +98,14 @@ inject_into_file 'app/views/layouts/application.html.erb', after: '<body>' do
 
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <div style="min-height: 100vh">
   HTML
+
+  inject_into_file 'app/views/layouts/application.html.erb', before: '<footer>' do
+  <<-HTML
+    </div>
+  HTML
+
 end
 
 # README
